@@ -8,9 +8,14 @@ public class Main {
         Teclado teclado = new Teclado(jugador);
         Scanner sc = new Scanner(System.in);
         System.out.println(jugador);
-        System.out.print("Ingrese un comando para mover al jugador");
+        System.out.print("Ingrese un comando para mover al jugador o q para salir");
         Character l = sc.next().toLowerCase().charAt(0);
         System.out.println(l);
-        teclado.moverAlPersonaje(l);
+        while (l != 'q') {
+            teclado.moverAlPersonaje(l);
+            System.out.println(jugador);
+            System.out.print("Ingrese otro comando para mover al jugador o q para salir");
+            l = sc.next().toLowerCase().charAt(0);
+        }
     }
 }
